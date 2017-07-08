@@ -8,7 +8,20 @@
     "url": "https://github.com/serge1peshcoff"
   },
   "license": "ISC",
-  "keywords": ["selenium-webdriver", "selenium", "webdriver", "conditions", "selenium-until", "testing", "automated-testing", "browser"],
+  "keywords": [
+    "selenium-webdriver",
+    "selenium",
+    "webdriver",
+    "conditions",
+    "selenium-until",
+    "testing",
+    "automated-testing",
+    "browser"
+  ],
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint --fix ."
+  },
   "homepage": "https://github.com/serge1peshcoff/selenium-until-extra",
   "bugs": {
     "url": "https://github.com/serge1peshcoff/selenium-until-extra/issues"
@@ -16,6 +29,13 @@
   "dependencies": {
     "selenium-webdriver": "^3.4.0"
   },
-  "files": ["app.js"],
-  "repository": "https://github.com/serge1peshcoff/selenium-until-extra"
+  "files": [
+    "app.js"
+  ],
+  "repository": "https://github.com/serge1peshcoff/selenium-until-extra",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
 }

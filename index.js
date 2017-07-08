@@ -2,13 +2,11 @@ const selenium = require('selenium-webdriver');
 
 const until = selenium.until;
 const Condition = selenium.Condition;
-const WebElementCondition = selenium.WebElementCondition;
 
 // exporting Selenium bindings
-const seleniumBindings = Object.keys(until);
-for (const binding of seleniumBindings) {
+Object.keys(until).forEach((binding) => {
   module.exports[binding] = until[binding];
-}
+});
 
 // ... and adding some more
 
@@ -21,8 +19,8 @@ for (const binding of seleniumBindings) {
  */
 exports.titleIsNot = function titleIsNot(title) {
   return new Condition(
-    'for title not to be ' + JSON.stringify(title),
-    driver =>  driver.getTitle().then(t => t !== title));
+    `for title not to be ${JSON.stringify(title)}`,
+    driver => driver.getTitle().then(t => t !== title));
 };
 
 /**
@@ -35,8 +33,8 @@ exports.titleIsNot = function titleIsNot(title) {
  */
 exports.titleNotContains = function titleNotContains(substr) {
   return new Condition(
-    'for title not to contain ' + JSON.stringify(substr),
-    driver => driver.getTitle().then(title =>  title.indexOf(substr) === -1));
+    `for title not to contain ${JSON.stringify(substr)}`,
+    driver => driver.getTitle().then(title => title.indexOf(substr) === -1));
 };
 
 /**
@@ -47,7 +45,7 @@ exports.titleNotContains = function titleNotContains(substr) {
  * @return {!Condition<boolean>} The new condition.
  */
 exports.titleNotMatches = function titleNotMatches(regex) {
-  return new Condition('for title to not match ' + regex,
+  return new Condition(`for title to not match ${regex}`,
     driver => driver.getTitle().then(title => !regex.test(title)));
 };
 
@@ -60,7 +58,7 @@ exports.titleNotMatches = function titleNotMatches(regex) {
  */
 exports.urlIsNot = function urlIsNot(url) {
   return new Condition(
-    'for URL not to be ' + JSON.stringify(url),
+    `for URL not to be ${JSON.stringify(url)}`,
     driver => driver.getCurrentUrl().then(u => u !== url));
 };
 
@@ -74,7 +72,7 @@ exports.urlIsNot = function urlIsNot(url) {
  */
 exports.urlNotContains = function urlNotContains(substrUrl) {
   return new Condition(
-    'for URL not to contain ' + JSON.stringify(substrUrl),
+    `for URL not to contain ${JSON.stringify(substrUrl)}`,
     driver => driver.getCurrentUrl().then(url => url.indexOf(substrUrl) === -1));
 };
 
@@ -87,6 +85,6 @@ exports.urlNotContains = function urlNotContains(substrUrl) {
  */
 exports.urlNotMatches = function urlNotMatches(regex) {
   return new Condition(
-    'for URL not to match ' + regex,
+    `for URL not to match ${regex}`,
     driver => driver.getCurrentUrl().then(url => !regex.test(url)));
 };
