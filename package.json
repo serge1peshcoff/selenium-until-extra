@@ -1,0 +1,21 @@
+{
+  "name": "selenium-until-extra",
+  "version": "0.1.0",
+  "description": "A package providing extra bindings for Selenium 'until' conditions'",
+  "main": "index.js",
+  "author": {
+    "name": "Sergey Peshkov",
+    "url": "https://github.com/serge1peshcoff"
+  },
+  "license": "ISC",
+  "keywords": ["selenium-webdriver", "selenium", "webdriver", "conditions", "selenium-until", "testing", "automated-testing", "browser"],
+  "homepage": "https://github.com/serge1peshcoff/selenium-until-extra",
+  "bugs": {
+    "url": "https://github.com/serge1peshcoff/selenium-until-extra/issues"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^3.4.0"
+  },
+  "files": ["app.js"],
+  "repository": "https://github.com/serge1peshcoff/selenium-until-extra"
+}
