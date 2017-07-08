@@ -2,6 +2,7 @@ const selenium = require('selenium-webdriver');
 
 const until = selenium.until;
 const Condition = selenium.Condition;
+const By = selenium.By;
 
 // exporting Selenium bindings
 Object.keys(until).forEach((binding) => {
@@ -87,4 +88,32 @@ exports.urlNotMatches = function urlNotMatches(regex) {
   return new Condition(
     `for URL not to match ${regex}`,
     driver => driver.getCurrentUrl().then(url => !regex.test(url)));
+};
+
+/**
+ * Creates a condition that will wait for the current page to contain specified substring.
+ *
+ * @param {!String} text The text substring to find.
+ * @return {!Condition<boolean>} The new condition.
+ */
+exports.pageContainsText = function pageContainsText(text) {
+  return new Condition(
+    `for page to contain '${text}'`,
+    driver => driver.findElement(By.xpath('/html/body'))
+      .getText()
+      .then(pageText => pageText.indexOf(text) !== -1));
+};
+
+/**
+ * Creates a condition that will wait for the current page not to contain specified substring.
+ *
+ * @param {!String} text The text substring to not include.
+ * @return {!Condition<boolean>} The new condition.
+ */
+exports.pageNotContainsText = function pageNotContainsText(text) {
+  return new Condition(
+    `for page not to contain '${text}'`,
+    driver => driver.findElement(By.xpath('/html/body'))
+      .getText()
+      .then(pageText => pageText.indexOf(text) === -1));
 };

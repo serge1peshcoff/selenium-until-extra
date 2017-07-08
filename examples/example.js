@@ -9,6 +9,7 @@ const until = require('../index'); // Replace with 'selenium-until-extra' in rea
 (async () => {
   const driver = new Builder().forBrowser('firefox').build();
 
+  /* ============================ URL related =================================== */
   console.log('Testing \'until.urlIsNot\'...');
   await driver.get('http://www.seleniumhq.org/projects/webdriver/');
   await driver.findElement(By.css('#menu_download a')).click();
@@ -30,6 +31,8 @@ const until = require('../index'); // Replace with 'selenium-until-extra' in rea
   await driver.wait(until.urlNotMatches(new RegExp('webdriver')));
   console.log('Finished waiting.');
 
+  /* ============================ Title related =================================== */
+
   console.log('Testing \'until.titleIsNot\'...');
   await driver.get('http://www.seleniumhq.org/projects/webdriver/');
   await driver.findElement(By.css('#menu_download a')).click();
@@ -49,5 +52,21 @@ const until = require('../index'); // Replace with 'selenium-until-extra' in rea
   await driver.findElement(By.css('#menu_download a')).click();
   console.log('Waiting for \'titleNotMatches\' condition...');
   await driver.wait(until.titleNotMatches(new RegExp('WebDriver')));
+  console.log('Finished waiting.');
+
+  /* ============================ Page content related ============================== */
+
+  console.log('Testing \'until.pageContainsText\'...');
+  await driver.get('http://www.seleniumhq.org/projects/webdriver/');
+  await driver.findElement(By.css('#menu_download a')).click();
+  console.log('Waiting for \'pageContainsText\' condition...');
+  await driver.wait(until.pageContainsText('Below is where you can find the latest releases of all the Selenium components.'));
+  console.log('Finished waiting.');
+
+  console.log('Testing \'until.pageNotContainsText\'...');
+  await driver.get('http://www.seleniumhq.org/projects/webdriver/');
+  await driver.findElement(By.css('#menu_download a')).click();
+  console.log('Waiting for \'pageNotContainsText\' condition...');
+  await driver.wait(until.pageNotContainsText('The biggest change in Selenium recently has been the inclusion of the WebDriver API.'));
   console.log('Finished waiting.');
 })();

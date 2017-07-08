@@ -22,6 +22,8 @@ The `selenium-until-extra` library exports all the Selenium `until` methods and 
 - `until.titleIsNot(title)` - waits for title not to be equal to `title`
 - `until.titleNotContains(substring)` - waits for title not to contain `substring`
 - `until.titleNotMatches(regex)` - waits for URL title to match `regex`
+- `until.pageContainsText(text)` - waits for page to contain `text`
+- `until.pageNotContainsText(text)` - waits for page not to contain `text`
 
 This list will most likely be increased in the future.
 
