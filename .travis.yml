@@ -1,6 +1,18 @@
+dist: trusty
 language: node_js
 node_js:
   - "8"
   - "7"
+  - "6"
+before_install:
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable unzip
+  - wget https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - chmod +x chromedriver
+  - sudo cp chromedriver /usr/local/bin
 script:
   - npm run lint
+  - npm test
