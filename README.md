@@ -1,5 +1,7 @@
 # selenium-until-extra
 
+![](https://img.shields.io/npm/dt/selenium-until-extra.svg) ![](https://img.shields.io/travis/serge1peshcoff/selenium-until-extra.svg) ![](https://img.shields.io/coveralls/serge1peshcoff/selenium-until-extra.svg)
+
 A library that add some extra methods to `selenium-webdriver`'s `until` module.
 
 ### Motivation
