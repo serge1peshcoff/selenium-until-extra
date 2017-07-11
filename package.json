@@ -21,7 +21,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint --fix .",
-    "test": "./node_modules/.bin/mocha test/"
+    "test": "nyc mocha",
+    "test:coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "homepage": "https://github.com/serge1peshcoff/selenium-until-extra",
   "bugs": {
@@ -37,9 +38,12 @@
   "devDependencies": {
     "chai": "^4.0.2",
     "chai-as-promised": "^7.1.1",
+    "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.4.2"
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   }
 }
