@@ -99,9 +99,9 @@ exports.urlNotMatches = function urlNotMatches(regex) {
 exports.pageContainsText = function pageContainsText(text) {
   return new Condition(
     `for page to contain '${text}'`,
-    driver => driver.findElement(By.xpath('/html/body'))
-      .getText()
-      .then(pageText => pageText.indexOf(text) !== -1));
+    driver => driver.findElement(By.xpath('/html/body')).getText().then(
+      pageText => pageText.indexOf(text) !== -1,
+      () => false)); // if the error occured (most likely the <body> is stale), return false
 };
 
 /**
@@ -113,7 +113,7 @@ exports.pageContainsText = function pageContainsText(text) {
 exports.pageNotContainsText = function pageNotContainsText(text) {
   return new Condition(
     `for page not to contain '${text}'`,
-    driver => driver.findElement(By.xpath('/html/body'))
-      .getText()
-      .then(pageText => pageText.indexOf(text) === -1));
+    driver => driver.findElement(By.xpath('/html/body')).getText().then(
+      pageText => pageText.indexOf(text) === -1,
+      () => true));
 };
