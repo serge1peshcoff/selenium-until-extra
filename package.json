@@ -20,7 +20,8 @@
   ],
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "lint:fix": "./node_modules/.bin/eslint --fix ."
+    "lint:fix": "./node_modules/.bin/eslint --fix .",
+    "test": "./node_modules/.bin/mocha test/"
   },
   "homepage": "https://github.com/serge1peshcoff/selenium-until-extra",
   "bugs": {
@@ -34,8 +35,11 @@
   ],
   "repository": "https://github.com/serge1peshcoff/selenium-until-extra",
   "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.4.2"
   }
 }

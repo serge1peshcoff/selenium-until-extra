@@ -35,7 +35,8 @@ When submitting an issue, please provide as more details as possible, such as:
 - your OS, `node` and library versions
 
 When submitting the PR, please keep this in mind:
-- we are using ESLint, the static code analyzer, to keep the code style consistent. Please make sure that your PR matches that code style by using `npm run lint`, if it shows no errors, then everything's fine. You can also use `npm lint:fix` to auto-fix some issues.
+- we are using ESLint, the static code analyzer, to keep the code style consistent. Please make sure that your PR matches that code style by using `npm run lint`, if it shows no errors, then everything's fine. You can also use `npm run lint:fix` to auto-fix some issues.
+- we have an automated testing, so please make sure all the tests pass before making a PR and if you want to add some extra functions to the library, please write tests for it.
 - you can be asked to refactor/improve/rebase your PR.
 
 If you want to suggest something new, you can make an issue about that, and we'll figure that out!
