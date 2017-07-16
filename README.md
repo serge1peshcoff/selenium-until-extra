@@ -2,6 +2,8 @@
 
 ![](https://img.shields.io/npm/dt/selenium-until-extra.svg) ![](https://img.shields.io/travis/serge1peshcoff/selenium-until-extra.svg) ![](https://img.shields.io/coveralls/serge1peshcoff/selenium-until-extra.svg)
 
+![NPM](https://nodei.co/npm/selenium-until-extra.png?downloads=true&downloadRank=true&stars=true) ![NPM](https://nodei.co/npm-dl/selenium-until-extra.png)]
+
 A library that add some extra methods to `selenium-webdriver`'s `until` module.
 
 ### Motivation
