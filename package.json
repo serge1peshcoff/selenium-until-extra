@@ -1,6 +1,6 @@
 {
   "name": "selenium-until-extra",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A package providing extra bindings for Selenium 'until' conditions'",
   "main": "index.js",
   "author": {
