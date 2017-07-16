@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint --fix .",
-    "test": "nyc mocha",
+    "test": "nyc mocha --timeout 10000",
     "test:coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "homepage": "https://github.com/serge1peshcoff/selenium-until-extra",
